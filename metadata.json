@@ -1,0 +1,6 @@
+{
+  "name": "Goldconio Token",
+  "description": "Premium landing page for Goldconio (GCNIO) cryptocurrency token with live metrics, ecosystem links, and secure administrator analytics panel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

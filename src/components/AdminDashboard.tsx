@@ -184,7 +184,7 @@ export default function AdminDashboard({
               triggerHapticFeedback();
               onClose();
             }}
-            className="text-neutral-400 hover:text-[#D4AF37] font-semibold text-xs border border-neutral-800 hover:border-[#D4AF37]/20 px-3 py-1.5 rounded transition-all duration-300 cursor-pointer"
+            className="text-neutral-400 hover:text-[#D4AF37] font-semibold text-sm sm:text-xs border border-neutral-800 hover:border-[#D4AF37]/20 px-4 py-2 min-h-[44px] rounded transition-all duration-300 cursor-pointer"
           >
             Close Terminal
           </button>
@@ -217,7 +217,7 @@ export default function AdminDashboard({
                     onChange={(e) => setPassword(e.target.value)}
                     disabled={lockoutTime > 0}
                     placeholder="Enter passkey..."
-                    className="w-full bg-black/80 text-[#F9E29C] placeholder-neutral-700 font-mono text-sm border border-neutral-800 focus:border-[#D4AF37] focus:outline-none rounded-xl px-4 py-3.5 pr-10"
+                    className="w-full bg-black/80 text-[#F9E29C] placeholder-neutral-700 font-mono text-base sm:text-sm border border-neutral-800 focus:border-[#D4AF37] focus:outline-none rounded-xl px-4 py-3.5 pr-12 min-h-[44px]"
                     autoFocus
                   />
                   <button
@@ -226,9 +226,9 @@ export default function AdminDashboard({
                       triggerHapticFeedback();
                       setShowPassword(!showPassword);
                     }}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-600 hover:text-[#D4AF37] transition-colors cursor-pointer"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 p-2 min-h-[44px] min-w-[44px] text-neutral-600 hover:text-[#D4AF37] flex items-center justify-center transition-colors cursor-pointer"
                   >
-                    <Eye className="h-4 w-4" />
+                    <Eye className="h-5 w-5 sm:h-4 sm:w-4" />
                   </button>
                 </div>
               </div>
@@ -249,7 +249,7 @@ export default function AdminDashboard({
                 id="admin-login-submit-btn"
                 type="submit"
                 disabled={lockoutTime > 0}
-                className={`w-full py-3.5 rounded-xl text-sm font-bold font-sans transition-all duration-300 cursor-pointer ${
+                className={`w-full py-4 min-h-[44px] rounded-xl text-base sm:text-sm font-bold font-sans transition-all duration-300 cursor-pointer ${
                   lockoutTime > 0
                     ? "bg-neutral-800 text-neutral-500 cursor-not-allowed"
                     : "bg-[#D4AF37] hover:bg-[#F9E29C] text-black shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
@@ -394,17 +394,17 @@ export default function AdminDashboard({
                 <button
                   id="export-csv-btn"
                   onClick={handleExportCSV}
-                  className="bg-neutral-900 hover:bg-neutral-800 border border-[#D4AF37]/20 hover:border-[#D4AF37] text-[#D4AF37] py-3.5 px-4 rounded-xl text-xs font-bold font-sans flex items-center justify-center gap-2.5 transition-all duration-300 cursor-pointer"
+                  className="bg-neutral-900 hover:bg-neutral-800 border border-[#D4AF37]/20 hover:border-[#D4AF37] text-[#D4AF37] py-3.5 px-4 min-h-[44px] rounded-xl text-sm sm:text-xs font-bold font-sans flex items-center justify-center gap-2.5 transition-all duration-300 cursor-pointer"
                 >
-                  <ArrowDownToLine className="h-4 w-4" />
+                  <ArrowDownToLine className="h-5 w-5 sm:h-4 sm:w-4" />
                   Export Engagement Log (CSV)
                 </button>
                 <button
                   id="export-json-btn"
                   onClick={handleExportJSON}
-                  className="bg-neutral-900 hover:bg-neutral-800 border border-[#D4AF37]/20 hover:border-[#D4AF37] text-[#D4AF37] py-3.5 px-4 rounded-xl text-xs font-bold font-sans flex items-center justify-center gap-2.5 transition-all duration-300 cursor-pointer"
+                  className="bg-neutral-900 hover:bg-neutral-800 border border-[#D4AF37]/20 hover:border-[#D4AF37] text-[#D4AF37] py-3.5 px-4 min-h-[44px] rounded-xl text-sm sm:text-xs font-bold font-sans flex items-center justify-center gap-2.5 transition-all duration-300 cursor-pointer"
                 >
-                  <ArrowDownToLine className="h-4 w-4" />
+                  <ArrowDownToLine className="h-5 w-5 sm:h-4 sm:w-4" />
                   Download Backup File (JSON)
                 </button>
               </div>
@@ -426,13 +426,13 @@ export default function AdminDashboard({
                   value={newNote}
                   onChange={(e) => setNewNote(e.target.value)}
                   placeholder="Record an administration memo or action item..."
-                  className="flex-1 bg-neutral-900 border border-neutral-800 rounded-lg px-3 py-2 text-xs text-neutral-200 focus:border-[#D4AF37] focus:outline-none placeholder-neutral-600"
+                  className="flex-1 bg-neutral-900 border border-neutral-800 rounded-lg px-3 py-2 text-sm sm:text-xs text-neutral-200 focus:border-[#D4AF37] focus:outline-none placeholder-neutral-600 min-h-[44px]"
                 />
                 <button
                   type="submit"
-                  className="bg-[#D4AF37] hover:bg-[#F9E29C] text-black p-2 rounded-lg transition-colors flex items-center justify-center cursor-pointer"
+                  className="bg-[#D4AF37] hover:bg-[#F9E29C] text-black p-2 rounded-lg transition-colors flex items-center justify-center cursor-pointer min-h-[44px] min-w-[44px]"
                 >
-                  <Plus className="h-4 w-4" />
+                  <Plus className="h-5 w-5 sm:h-4 sm:w-4" />
                 </button>
               </form>
 
@@ -449,10 +449,10 @@ export default function AdminDashboard({
                       </div>
                       <button
                         onClick={() => handleDeleteNote(idx)}
-                        className="text-neutral-500 hover:text-red-400 p-1 rounded transition-colors cursor-pointer"
+                        className="text-neutral-500 hover:text-red-400 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center rounded transition-colors cursor-pointer"
                         title="Delete note"
                       >
-                        <Trash2 className="h-4 w-4" />
+                        <Trash2 className="h-5 w-5 sm:h-4 sm:w-4" />
                       </button>
                     </div>
                   ))
@@ -465,20 +465,20 @@ export default function AdminDashboard({
             </div>
 
             {/* REFRESH & LOGOUT ACTION BAR */}
-            <div className="flex justify-between items-center pt-2 border-t border-neutral-800">
+            <div className="flex justify-between items-center pt-4 border-t border-neutral-800">
               <button
                 onClick={handleRefresh}
-                className="flex items-center gap-1.5 text-xs text-neutral-500 hover:text-[#D4AF37] transition-colors duration-300 cursor-pointer"
+                className="flex items-center gap-1.5 p-2 -ml-2 min-h-[44px] text-sm sm:text-xs text-neutral-500 hover:text-[#D4AF37] transition-colors duration-300 cursor-pointer"
               >
-                <RefreshCw className="h-3.5 w-3.5" />
+                <RefreshCw className="h-4 w-4 sm:h-3.5 sm:w-3.5" />
                 Refresh Data logs
               </button>
               <button
                 id="admin-logout-btn"
                 onClick={handleLogout}
-                className="flex items-center gap-1.5 text-xs text-neutral-400 hover:text-red-400 transition-colors duration-300 cursor-pointer"
+                className="flex items-center gap-1.5 p-2 -mr-2 min-h-[44px] text-sm sm:text-xs text-neutral-400 hover:text-red-400 transition-colors duration-300 cursor-pointer"
               >
-                <LogOut className="h-3.5 w-3.5" />
+                <LogOut className="h-4 w-4 sm:h-3.5 sm:w-3.5" />
                 Logout (Clear Lock)
               </button>
             </div>

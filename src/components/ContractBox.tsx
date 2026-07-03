@@ -76,27 +76,27 @@ export default function ContractBox() {
               </span>
               <button
                 onClick={() => setShowTooltip(!showTooltip)}
-                className="text-neutral-500 hover:text-[#D4AF37] transition-colors"
+                className="text-neutral-500 hover:text-[#D4AF37] transition-colors p-2 -mr-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
                 title="Help info"
               >
-                <HelpCircle className="h-4 w-4" />
+                <HelpCircle className="h-5 w-5 sm:h-4 sm:w-4" />
               </button>
             </div>
 
             {/* Address bar with Copy to clipboard */}
-            <div className="bg-black/80 rounded-xl border border-neutral-800 p-4 flex flex-col sm:flex-row items-center justify-between gap-4 relative overflow-hidden">
+            <div className="bg-black/80 rounded-xl border border-neutral-800 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 relative overflow-hidden">
               <div className="w-full flex-1 min-w-0 flex flex-col justify-center">
-                <span className="text-xs font-mono text-neutral-500 block mb-1">Contract Address</span>
+                <span className="text-xs sm:text-sm font-mono text-neutral-500 block mb-1">Contract Address</span>
                 <div className="flex items-center gap-2">
-                  <span className="text-sm sm:text-base font-mono text-[#F9E29C] block truncate select-all tracking-tight sm:tracking-normal">
+                  <span className="text-sm sm:text-base md:text-lg font-mono text-[#F9E29C] block truncate select-all tracking-tight sm:tracking-normal">
                     {contractAddress}
                   </span>
                   <button
                     onClick={handleCopy}
-                    className="p-1.5 rounded-md hover:bg-neutral-800 text-neutral-400 hover:text-white transition-colors relative group"
+                    className="p-2 sm:p-1.5 min-h-[44px] min-w-[44px] sm:min-h-0 sm:min-w-0 rounded-md hover:bg-neutral-800 text-neutral-400 hover:text-white flex items-center justify-center transition-colors relative group"
                     title="Copy to Clipboard"
                   >
-                    {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+                    {copied ? <Check className="h-5 w-5 sm:h-4 sm:w-4 text-green-500" /> : <Copy className="h-5 w-5 sm:h-4 sm:w-4" />}
                     
                     {/* Success Tooltip */}
                     <AnimatePresence>
@@ -105,7 +105,7 @@ export default function ContractBox() {
                           initial={{ opacity: 0, y: 10, scale: 0.9 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.9 }}
-                          className="absolute -top-10 left-1/2 -translate-x-1/2 bg-green-500 text-black text-[10px] font-bold px-2.5 py-1 rounded shadow-lg whitespace-nowrap z-20 pointer-events-none"
+                          className="absolute -top-10 left-1/2 -translate-x-1/2 bg-green-500 text-black text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded shadow-lg whitespace-nowrap z-20 pointer-events-none"
                         >
                           Copied!
                           <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 border-[4px] border-transparent border-t-green-500" />
@@ -119,7 +119,7 @@ export default function ContractBox() {
               <button
                 id="copy-contract-btn"
                 onClick={handleCopy}
-                className={`relative w-full sm:w-auto px-5 py-3 rounded-lg font-sans font-bold text-xs flex items-center justify-center gap-2 transition-all duration-300 ${
+                className={`relative w-full sm:w-auto px-5 py-3.5 sm:py-3 min-h-[44px] rounded-lg font-sans font-bold text-sm sm:text-xs flex items-center justify-center gap-2 transition-all duration-300 ${
                   copied
                     ? "bg-green-500 text-neutral-950 shadow-[0_0_15px_rgba(34,197,94,0.4)]"
                     : "bg-[#D4AF37] hover:bg-[#F9E29C] text-black shadow-[0_0_10px_rgba(212,175,55,0.2)] hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] active:scale-95"
@@ -200,14 +200,14 @@ export default function ContractBox() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
               <button
                 onClick={() => window.open("https://bscscan.com/address/0x5c7e2fbf5803938b99191387465e95e70ab552d7", "_blank")}
-                className="bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 text-neutral-200 hover:text-white font-bold text-xs px-5 py-3 rounded-lg transition-colors cursor-pointer flex items-center justify-center gap-2"
+                className="bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 text-neutral-200 hover:text-white font-bold text-sm sm:text-xs px-5 py-3.5 sm:py-3 min-h-[44px] rounded-lg transition-colors cursor-pointer flex items-center justify-center gap-2"
               >
                 View on BscScan
                 <ExternalLink className="h-4 w-4" />
               </button>
               <button
                 onClick={() => window.open("https://poocoin.app/tokens/0x5c7e2fbf5803938b99191387465e95e70ab552d7", "_blank")}
-                className="bg-neutral-900 hover:bg-neutral-800 border border-[#D4AF37]/30 text-[#D4AF37] font-bold text-xs px-5 py-3 rounded-lg transition-colors cursor-pointer flex items-center justify-center gap-2"
+                className="bg-neutral-900 hover:bg-neutral-800 border border-[#D4AF37]/30 text-[#D4AF37] font-bold text-sm sm:text-xs px-5 py-3.5 sm:py-3 min-h-[44px] rounded-lg transition-colors cursor-pointer flex items-center justify-center gap-2"
               >
                 View Chart on PooCoin
                 <ExternalLink className="h-4 w-4" />

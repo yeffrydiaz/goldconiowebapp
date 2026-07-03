@@ -534,7 +534,7 @@ export default function App() {
                 <MessageCircle className="h-5 w-5" />
               </button>
               <button
-                onClick={() => handleExternalLink("GitHub", "https://github.com")}
+                onClick={() => handleExternalLink("GitHub", "https://github.com/goldconio/goldconioprotocol")}
                 className="h-10 w-10 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-[#D4AF37]/20 text-neutral-400 hover:text-[#D4AF37] flex items-center justify-center transition-colors cursor-pointer"
                 title="View Open Source Code"
               >
